@@ -43,11 +43,11 @@ colorize_prompt() {
 demande_oui_non() {
     local response
     while true; do
-        read -p "$(colorize_prompt "$CAT" "$1 (O/N): ")" -r reponce
+        read -p "$(colorize_prompt "$CAT" "$1 (Y/N): ")" -r reponce
         case "$response" in
-            [Oo]* ) eval "$2='O'"; return 0;;
+            [Yy]* ) eval "$2='Y'"; return 0;;
             [Nn]* ) eval "$2='N'"; return 1;;
-            * ) echo "Repondez avec O/o or N/n.";;
+            * ) echo "Repondez avec Y/y or N/n.";;
         esac
     done
 }
